@@ -13,12 +13,12 @@ Add the gem to your Gemfile.
 == Usage
 
 ==== General Options
-* <tt>:locale</tt> - Sets the locale to be used for formatting (defaults to current locale).
-* <tt>:currency</tt> - Sets the denomination of the currency (defaults to +:default+ currency for the locale or "dollar" if not set).
-* <tt>:connector</tt> - Sets the connector between integer part and decimal part of the currency (defaults to ", ").
-* <tt>:format</tt> - Sets the format for non-negative numbers (defaults to "%n").
+* <tt>:locale</tt> - Sets the locale to be used for formatting. Defaults to 'en' (English). Unicode language and territory codes can be used, such as 'es-MX' (Spanish, Mexico).
+* <tt>:currency</tt> - Sets the denomination of the currency. Defaults to +:default+ currency for the locale or "dollar" if not set.
+* <tt>:connector</tt> - Sets the connector between integer part and decimal part of the currency. Defaults to ", ".
+* <tt>:format</tt> - Sets the format for non-negative numbers. Defaults to "%n".
 Field is <tt>%n</tt> for the currency amount in words.
-* <tt>:negative_format</tt> - Sets the format for negative numbers (defaults to prepending "minus" to the number in words 'minus %n').
+* <tt>:negative_format</tt> - Sets the format for negative numbers. Defaults to prepending "minus" to the number in words 'minus %n'.
 Field is <tt>%n</tt> for the currency amount in words (same as format).
 
 ===== Examples

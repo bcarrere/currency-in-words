@@ -81,12 +81,13 @@ module CurrencyInWords
           return e.number.to_s.html_safe? ? rounded_number.html_safe : rounded_number
         end
       end
-
+      
+      inferred_klass_name = options[:locale].to_s.sub(/([a-z]{2})(-([a-z]{2}))?/i){|s| $1 ? ($1[0].upcase + $1[1].downcase + ($3 ? $3.upcase : '')) : s }
       begin
-        klass = "CurrencyInWords::#{options[:locale].to_s.capitalize}Texterizer".constantize
+        klass = "CurrencyInWords::#{inferred_klass_name}Texterizer".constantize
       rescue NameError
         if options[:raise]
-          raise NameError, "Implement a class #{options[:locale].to_s.capitalize}Texterizer to support this locale, please."
+          raise NameError, "Implement a class #{inferred_klass_name}Texterizer to support this locale, please."
         else
           klass = EnTexterizer
         end
